@@ -1,0 +1,22 @@
+main {
+  display: block;
+}
+.weather {
+  border: 1px solid black;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.weather-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.current-weather {
+  align-items: center;
+  display: flex;
+}
