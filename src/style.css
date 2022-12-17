@@ -1,6 +1,10 @@
 main {
   display: block;
 }
+
+img {
+  max-width: 100%;
+}
 .weather {
   border: 1px solid black;
   max-width: 600px;
@@ -11,6 +15,11 @@ main {
   margin-top: 50px;
 }
 
+.temperature {
+  font-size: 64px;
+  padding: 0 20px 0 10px;
+}
+
 .weather-section {
   display: flex;
   justify-content: space-between;
@@ -18,5 +27,20 @@ main {
 
 .current-weather {
   align-items: center;
+  display: flex;
+}
+
+.city {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.description {
   display: flex;
 }
