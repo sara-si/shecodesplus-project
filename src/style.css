@@ -2,9 +2,6 @@ main {
   display: block;
 }
 
-img {
-  max-width: 100%;
-}
 .weather {
   border: 1px solid black;
   max-width: 600px;
@@ -12,12 +9,13 @@ img {
   padding: 20px;
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 90px;
 }
 
 .temperature {
-  font-size: 64px;
+  font-size: 72px;
   padding: 0 20px 0 10px;
+  margin-bottom: 10px;
 }
 
 .weather-section {
@@ -33,6 +31,7 @@ img {
 .city {
   font-size: 32px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .list {
@@ -42,5 +41,30 @@ img {
 }
 
 .description {
-  display: flex;
+  margin-left: 25px;
+  margin-top: -20px;
+}
+
+.icon {
+  margin-top: 10px;
+}
+
+.forecast-weather {
+  margin-bottom: 120px;
+  padding-top: 10px;
+}
+
+.forecast-day {
+  margin: 40px 30px;
+  margin-bottom: -10px;
+}
+
+.forecast-temperature {
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.search {
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
