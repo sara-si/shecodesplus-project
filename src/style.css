@@ -1,5 +1,10 @@
 body {
   background: linear-gradient(6deg, rgb(26, 33, 83) 0%, rgb(70, 81, 163) 100%);
+  background: linear-gradient(
+    6deg,
+    rgb(22, 26, 58) 0%,
+    rgba(28, 19, 90, 0.767) 100%
+  );
 }
 
 .weather {
@@ -11,7 +16,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   height: 580px;
   color: white;
-  background: rgb(29, 29, 66);
+  background: #272044;
+  background: linear-gradient(to bottom, #120f2f, #23174b, #24243e);
+  background: rgba(35, 15, 69, 0.388);
+  box-shadow: 0px 0px 4px 1px rgb(0 0 0 / 20%);
 }
 
 .temperature {
@@ -35,7 +43,8 @@ body {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 0;
-  color: rgb(34, 177, 225);
+  color: white;
+  font-family: "Albert Sans", sans-serif;
 }
 
 .time {
@@ -88,10 +97,26 @@ body {
 #search-city {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-
   padding: 10px;
   border: none;
   color: white;
+}
+
+.search-button,
+.current-button {
+  background: rgb(22, 135, 172);
+  border: none;
+  padding: 10px;
+  width: 120px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+}
+
+.current-button {
+  width: 160px;
+  background: rgb(251, 92, 141);
+  margin-left: -20px;
 }
 
 .footer {
