@@ -24,7 +24,7 @@
   <body>
     <div class="container">
       <div class="weather">
-        <form class="mb-3">
+        <form class="mb-3" id="search-form">
           <div class="row search">
             <div class="col-6">
               <input
@@ -32,7 +32,7 @@
                 placeholder="Enter a city..."
                 class="form-control"
                 autocomplete="off"
-                id="search-city"
+                id="city-input"
               />
             </div>
             <div class="col-3">
@@ -72,6 +72,7 @@
                   class="icon"
                   src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"
                   alt="cloudy"
+                  id="icon"
                 />
               </div>
               <h3 class="temperature"><span id="temperature"></span>°</h3>
@@ -79,25 +80,7 @@
             <div class="description" id="description">Cloudy</div>
           </div>
         </section>
-        <section class="forecast-weather" id="forecast">
-          <div class="forecast-box">
-            <div class="row">
-              <div class="col">
-                <div class="forecast-day">Thu</div>
-                <div class="forecast-icon">
-                  <img
-                    src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"
-                    width="100"
-                  />
-                </div>
-                <div class="forecast-temperature">
-                  <span class="forecast-temperature-max">18°</span>
-                  <span class="forecats-temperature-min">12°</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <section class="forecast-weather" id="forecast"></section>
         <p class="footer"><a href="">Open-source code</a> by Sara Sarabi</p>
       </div>
     </div>
