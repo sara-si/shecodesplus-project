@@ -21,6 +21,13 @@ function formatDate(time) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function formatDay(timestampp) {
+  let date = new Date(timestampp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
@@ -59,39 +66,61 @@ function search(city) {
   let apiKey2 = "fta134003b032o583a14a7f723b18aa3";
   let apiUrl2 = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey2}`;
   axios.get(apiUrl2).then(displayIcon);
+
+  let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey2}`;
+  axios.get(apiUrlForecast).then(displayForecast);
 }
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Tabriz");
+search("Berlin");
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML += `
        <div class="col">
-              <div class="forecast-day">${day}</div>
+              <div class="forecast-day">${formatDay(forecastDay.time)}</div>
               <div class="forecast-icon">
                 <img
-                  src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"
+                  src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                    forecastDay.condition.icon
+                  }.png"
                   width="100"
                 />
               </div>
               <div class="forecast-temperature">
-                <span class="forecast-temperature-max">18°</span>
-                <span class="forecats-temperature-min">12°</span>
+                <span class="forecast-temperature-max">${Math.round(
+                  forecastDay.temperature.maximum
+                )}°</span>
+                <span class="forecast-temperature-min">${Math.round(
+                  forecastDay.temperature.minimum
+                )}°</span>
               </div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
 }
+
 displayForecast();
+
+function showPosition(position) {
+  console.log(position);
+}
+
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+let currentLocation = document.querySelector("#current-button button");
+currentLocation.addEventListener("click", getCurrentPosition());
