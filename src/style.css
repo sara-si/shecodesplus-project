@@ -5,6 +5,7 @@ body {
     rgb(22, 26, 58) 0%,
     rgba(28, 19, 90, 0.767) 100%
   );
+  font-family: "Albert Sans", sans-serif;
 }
 
 .weather {
@@ -12,13 +13,14 @@ body {
   border-radius: 20px;
   padding: 40px;
   display: block;
-  margin: 90px auto 90px;
+  margin: 80px auto 80px;
   font-family: Arial, Helvetica, sans-serif;
-  height: 580px;
+  height: 600px;
   color: white;
   background: #272044;
   background: linear-gradient(to bottom, #120f2f, #23174b, #24243e);
   background: rgba(35, 15, 69, 0.388);
+  background: linear-gradient(to bottom, #1b1645, #23174b, #24243e);
   box-shadow: 0px 0px 4px 1px rgb(0 0 0 / 20%);
 }
 
@@ -26,6 +28,7 @@ body {
   font-size: 72px;
   padding: 0 20px 0 10px;
   margin-top: 40px;
+  font-family: "Open Sans", sans-serif;
 }
 
 .weather-section {
@@ -44,11 +47,11 @@ body {
   font-weight: bold;
   margin-bottom: 0;
   color: white;
-  font-family: "Albert Sans", sans-serif;
 }
 
 .time {
   margin-left: 2px;
+  color: rgba(241, 241, 241, 0.856);
 }
 .list {
   list-style: none;
@@ -64,16 +67,17 @@ body {
   margin-top: 0px;
   font-weight: bold;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Albert Sans", sans-serif;
+  margin-left: 22px;
 }
 
 .icon {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .forecast-weather {
   border-radius: 20px;
-  margin-top: 50px;
+  margin-top: 40px;
   padding: 10px;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -84,8 +88,7 @@ body {
 }
 
 .forecast-temperature {
-  margin-left: 30px;
-  margin-top: -10px;
+  margin-left: 24px;
   font-size: 18px;
   font-weight: 700;
   padding: 0;
@@ -95,12 +98,13 @@ body {
   margin-left: 8px;
   opacity: 0.6;
 }
+
 .search {
   padding-top: 30px;
   padding-bottom: 10px;
 }
 
-#search-city {
+input.search-city {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 10px;
@@ -108,30 +112,51 @@ body {
   color: white;
 }
 
+input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
 .search-button,
 .current-button {
-  background: rgb(22, 135, 172);
-  border: none;
+  background: none;
   padding: 10px;
   width: 120px;
   border-radius: 10px;
-  color: white;
+  color: rgb(0, 187, 203);
   font-size: 16px;
+  font-family: "Albert Sans", sans-serif;
+  transition: ease-in 70ms;
+  border: 2px solid rgb(0, 187, 203);
+}
+.search-button:hover {
+  border: 2px solid rgb(0, 187, 203);
+  background: rgb(0, 187, 203);
+  color: white;
 }
 
 .current-button {
   width: 160px;
-  background: rgb(251, 92, 141);
+  color: rgba(246, 48, 173, 0.905);
+  background: none;
   margin-left: -20px;
+  border: 2px solid rgba(246, 48, 173, 0.905);
+}
+.current-button:hover {
+  background: rgba(246, 48, 173, 0.905);
+  color: white;
 }
 
 .footer {
   font-size: 14px;
   font-family: "Courier New", Courier, monospace;
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
 }
 .footer a {
   color: rgb(34, 177, 225);
   text-decoration: none;
+}
+.footer a:hover {
+  color: rgb(214, 67, 111);
 }

@@ -29,7 +29,6 @@ function formatDay(timestampp) {
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(response.data.current.temp_c);
   let cityElement = document.querySelector("#city");
@@ -74,12 +73,10 @@ function search(city) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-search("Berlin");
+search("Tehran");
 
 function displayForecast(response) {
-  console.log(response);
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
 
@@ -112,15 +109,4 @@ function displayForecast(response) {
 
   forecastElement.innerHTML = forecastHTML;
 }
-
 displayForecast();
-
-function showPosition(position) {
-  console.log(position);
-}
-
-function getCurrentPosition() {
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-let currentLocation = document.querySelector("#current-button button");
-currentLocation.addEventListener("click", getCurrentPosition());
