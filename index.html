@@ -11,6 +11,7 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +34,7 @@
       <div class="weather">
         <form class="mb-3" id="search-form">
           <div class="row search">
-            <div class="col-6">
+            <div class="col-9">
               <input
                 type="text"
                 placeholder="Enter a city..."
@@ -50,23 +51,14 @@
                 id="search-button"
               />
             </div>
-            <div class="col-3">
-              <input
-                type="submit"
-                value="Current Location"
-                class="current-button"
-                id="current-button"
-              />
-            </div>
           </div>
         </form>
         <section class="weather-section">
           <div>
             <div class="city">
-              <span id="city">Berlin</span><span>, </span
-              ><span id="country"> Germany</span>
+              <span id="city"></span><span>, </span><span id="country"> </span>
             </div>
-            <div class="time">Last updated: <span id="date">12:10</span></div>
+            <div class="time">Last updated: <span id="date"></span></div>
             <ul class="list">
               <li>Humidty: <span id="humidity">20</span>%</li>
               <li>Wind: <span id="wind">50</span> km/h</li>
@@ -81,10 +73,10 @@
                   alt="cloudy"
                   id="icon"
                 />
+                <div class="description" id="description"></div>
               </div>
               <h3 class="temperature"><span id="temperature"></span>°</h3>
             </div>
-            <div class="description" id="description"></div>
           </div>
         </section>
         <section class="forecast-weather" id="forecast"></section>
